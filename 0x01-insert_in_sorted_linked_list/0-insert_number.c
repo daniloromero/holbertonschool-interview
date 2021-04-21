@@ -28,6 +28,8 @@ else
 {
     while (current->n < new->n)
     {
+        if (current->next == NULL)
+            current->next = new;
         prev= current;
         current = current->next;
     }
