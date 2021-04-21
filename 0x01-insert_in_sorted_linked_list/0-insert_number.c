@@ -2,7 +2,7 @@
 #include "lists.h"
 
 /**
- *  *insert_node - inserts a node into a listint_t list
+ * insert_node - inserts a node into a listint_t list
  * @head: pointer to list
  * @number: integer value to store in the note
  * Return: new list with new node or NULL if failed
@@ -32,8 +32,6 @@ else
 {
 while (current && current->n < new->n)
 {
-if (current->next == NULL)
-current->next = new;
 prev = current;
 current = current->next;
 }
