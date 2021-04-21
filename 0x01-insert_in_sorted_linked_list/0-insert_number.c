@@ -22,11 +22,11 @@ if (new == NULL)
 new->n = number;
 new->next = NULL;
 
-if (*head == NULL)
-    *head = new;
+if (current == NULL)
+    current = new;
 else
 {
-    while (current->n < new->n)
+    while (current && current->n < new->n)
     {
         if (current->next == NULL)
             current->next = new;
