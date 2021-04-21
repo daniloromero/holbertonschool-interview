@@ -4,4 +4,15 @@
 
 def canUnlockAll(boxes):
     """determines if all the boxes can be opened"""
-    return True
+    to_open = [0] * len(boxes)
+    keys = boxes[0]
+    to_open[0] = 1
+    if len(boxes) > 1:
+        for i, key in enumerate(keys):
+            if to_open[key] == 1:
+                continue
+            keys.extend(boxes[key])
+            to_open[key] = 1
+            set(keys)
+        return (sum(to_open) == len(boxes))
+    return False
