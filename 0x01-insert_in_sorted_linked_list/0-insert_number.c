@@ -22,7 +22,8 @@ if (new == NULL)
 new->n = number;
 new->next = NULL;
 
-if (current == NULL)
+if (current == NULL || current->n > number)
+    new->next = current;
     current = new;
 else
 {
