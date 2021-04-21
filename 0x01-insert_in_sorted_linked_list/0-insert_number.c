@@ -23,8 +23,10 @@ new->n = number;
 new->next = NULL;
 
 if (current == NULL || current->n > number)
+{
     new->next = current;
     current = new;
+}
 else
 {
     while (current && current->n < new->n)
