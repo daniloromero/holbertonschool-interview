@@ -25,8 +25,8 @@ new->next = NULL;
 
 if (current == NULL || current->n > number)
 {
-new->next = current;
-current = new;
+new->next = *head;
+*head = new;
 }
 else
 {
