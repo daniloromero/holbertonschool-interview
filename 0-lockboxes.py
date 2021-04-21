@@ -9,10 +9,12 @@ def canUnlockAll(boxes):
     to_open[0] = 1
     if len(boxes) > 1:
         for i, key in enumerate(keys):
-            if to_open[key] == 1:
+            if to_open[key] == 1:  # skips opened box
                 continue
             keys.extend(boxes[key])
             to_open[key] = 1
-            set(keys)
+            keys = list(set(keys))
+            while keys[-1] > len(boxes):  # removes key out of range in boxes
+                keys.pop()
         return (sum(to_open) == len(boxes))
     return False
