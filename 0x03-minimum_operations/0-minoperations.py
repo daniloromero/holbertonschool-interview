@@ -10,7 +10,7 @@ def minOperations(n):
     if type(n) is not int or n == 1:
         return 0
     H = 1
-    pasted_H = H
+    paste = H
     op = 0
     while H < n:
         if n % H == 0:
