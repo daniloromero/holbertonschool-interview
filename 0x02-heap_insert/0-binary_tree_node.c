@@ -2,7 +2,7 @@
 
 /**
  * binary_tree_node - creates a binary tree node
- * @parent: pointer to panret node
+ * @parent: pointer to parent node
  * @value: integer to be store in the new node
  * Return: pointer to new node, NULL otherwise
  */
