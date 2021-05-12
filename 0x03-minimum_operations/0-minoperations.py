@@ -14,8 +14,8 @@ def minOperations(n):
     op = 0
     while H < n:
         if n % H == 0:
-            H *= 2
             paste = H
+            H *= 2
             op += 2
         else:
             H += paste
