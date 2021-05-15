@@ -24,6 +24,7 @@ static void print_grid(int grid[3][3])
 /**
  * topple - topples sandpile until every position is less or equal to 3
  * @grid1: first sandpile
+ * @grid2: second sandpiles
  * Return: toppled sandpile
  */
 void topple(int grid1[3][3], int grid2[3][3])
