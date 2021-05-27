@@ -22,7 +22,7 @@ int recursion_palind(listint_t **left, listint_t *right)
 	if ((*left)->n == right->n)
 		is_palind = 1;
 	else
-		is_palind = 0
+		is_palind = 0;
 	*left = (*left)->next;
 	return (is_palind);
 }
