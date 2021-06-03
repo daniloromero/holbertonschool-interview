@@ -27,11 +27,12 @@ def print_stats():
 try:
     for i, line in enumerate(sys.stdin, start=1):
         split_line = line.strip().split()
-        if split_line[-2] in status_code.keys():
-            status_code[split_line[-2]] += 1
-            size += int(split_line[-1])
-        else:
-            continue
+        try:
+            if split_line[-2] in status_code.keys():
+                status_code[split_line[-2]] += 1
+                size += int(split_line[-1])
+        except Exception:
+            pass
         if i % 10 == 0:
             print_stats()
             size = 0
