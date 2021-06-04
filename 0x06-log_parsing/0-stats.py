@@ -35,8 +35,6 @@ try:
             pass
         if i % 10 == 0:
             print_stats()
-            for k, v in status_code.items():
-                status_code[k] = 0
     print_stats()
 except KeyboardInterrupt:
     print_stats()
