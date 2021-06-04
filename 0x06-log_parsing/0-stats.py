@@ -31,11 +31,10 @@ try:
             if split_line[-2] in status_code.keys():
                 status_code[split_line[-2]] += 1
                 size += int(split_line[-1])
-        except Exception:
+        except:
             pass
         if i % 10 == 0:
             print_stats()
-            size = 0
             for k, v in status_code.items():
                 status_code[k] = 0
     print_stats()
