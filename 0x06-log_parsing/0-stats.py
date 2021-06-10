@@ -24,15 +24,19 @@ def print_stats():
             print('{}: {}'.format(s_code, count))
 
 
-for i, line in enumerate(sys.stdin, start=1):
-    split_line = line.strip().split()
-    if split_line[-2] in status_code.keys():
-        status_code[split_line[-2]] += 1
-        size += int(split_line[-1])
-    else:
-        continue
-    if i % 10 == 0:
-        print_stats()
-        size = 0
-        for k, v in status_code.items():
-            status_code[k] = 0
+try:
+    for i, line in enumerate(sys.stdin, start=1):
+        split_line = line.strip().split()
+        try:
+            if split_line[-2] in status_code.keys():
+                status_code[split_line[-2]] += 1
+                size += int(split_line[-1])
+        except:
+            pass
+        if i % 10 == 0:
+            print_stats()
+    print_stats()
+except KeyboardInterrupt:
+    print_stats()
+    raise
+>>>>>>> 78365738e8197e665137c09e19b545067fee7acc
