@@ -11,14 +11,13 @@ def validUTF8(data):
     count = 0
     for byte in data:
         if count == 0:
-            if byte > 127 and byte < 192:
+            if byte >= 192 and byte < 224:
                 count += 1
-            if byte > 192 and byte < 224:
+            if byte >= 224 and byte < 240:
                 count += 2
-            if byte > 224 and byte < 240:
+            if byte > 240:
                 count += 3
         else:
             if byte < 128:
                 return False
     return True
-
