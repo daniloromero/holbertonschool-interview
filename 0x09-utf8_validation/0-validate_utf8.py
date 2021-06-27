@@ -10,6 +10,8 @@ def validUTF8(data):
     """
     byte_size = 0
     for byte in data:
+        if byte > 255:
+            return False
         if byte_size == 0:
             if byte >> 5 == 0b110:
                 byte_size += 1
@@ -23,4 +25,6 @@ def validUTF8(data):
             if byte >> 6 != 0b10:
                 return False
             byte_size -= 1
+    if byte_size != 0:
+        return False
     return True
