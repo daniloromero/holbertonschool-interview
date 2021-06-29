@@ -62,6 +62,7 @@ void reverse_line(int *line, size_t size)
  *
  * @line: Array of integers
  * @size: Numbe of elements in @line
+ * @direction: direction for the merge can be SLIDE_LEFT or SLIDE_RIGHT
  * Return: 1 upon success, or 0 upon failure
  */
 int slide(int *line, size_t size, int direction)
