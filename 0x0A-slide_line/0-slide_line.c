@@ -98,6 +98,8 @@ int slide(int *line, size_t size, int direction)
 int slide_line(int *line, size_t size, int direction)
 {
 
+	if (line && direction && size < 2)
+		return (1);
 	if (direction == 4)
 	{
 		merge_line(line, size);
