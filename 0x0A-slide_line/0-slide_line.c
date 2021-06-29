@@ -42,17 +42,14 @@ void merge_line(int *line, size_t size)
  */
 void reverse_line(int *line, size_t size)
 {
-	int aux[size];
-	size_t i;
+	size_t i, j;
+	int swap;
 
-	for (i = 0; i < size; i++)
+	for (i = 0, j = size - 1; i < size / 2; i++, j--)
 	{
-		aux[size - 1 - i] = line[i];
-	}
-
-	for (i = 0; i < size; i++)
-	{
-		line[i] = aux[i];
+		swap = line[i];
+		line[i] = line[j];
+		line[j] = swap;
 	}
 }
 
