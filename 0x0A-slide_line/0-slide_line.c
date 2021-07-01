@@ -12,7 +12,7 @@ void merge_line(int *line, size_t size)
 	int a, b = 0;
 	size_t i, j;
 
-	for (i = 0; i < size; i++)
+	for (i = 0; i < size - 1; i++)
 	{
 		j = i + 1;
 		if (line[i] == 0)
@@ -66,7 +66,7 @@ int slide(int *line, size_t size, int direction)
 {
 	size_t i, j;
 
-	for (i = 0; i < size - 2; i++)
+	for (i = 0; i < size - 1; i++)
 	{
 		j = i;
 		if (line[i] != 0)
