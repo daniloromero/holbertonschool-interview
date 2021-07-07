@@ -8,21 +8,26 @@
 
 void menger(int level)
 {
-	int i, j, height, width = 0;
+	int i, j, y, x, gap, height, width = 0;
 
 	height = width = pow(3, level);
 	for (i = 0; i < height; i++)
 	{
 		for (j = 0; j < width; j++)
 		{
-			if (j == width - 1)
+			gap = 0;
+			y = i;
+			x = j;
+			while (y > 0)
 			{
-				printf("#\n");
-				continue;
+				if (y % 3 == 1 && x % 3 == 1)
+					gap = 1;
+				y /= 3;
+				x /= 3;
 			}
-			else
-				putchar('#');
+			gap == 0 ? putchar('#') : putchar(' ');
 		}
+		printf("\n");
 	}
 
 }
