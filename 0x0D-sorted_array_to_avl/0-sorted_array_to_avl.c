@@ -24,6 +24,8 @@ avl_t *tree_node(int *array, int start, int end, avl_t **root)
 	tree_node(array, middle + 1, end, &right);
 
 	new_node = malloc(sizeof(avl_t));
+	if (new_node == NULL)
+		return (NULL);
 	new_node->n = array[middle];
 	new_node->left = left;
 	new_node->right = right;
