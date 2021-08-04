@@ -1,5 +1,4 @@
 #include "search.h"
-#include <unistd.h>
 
 
 /**
@@ -12,7 +11,6 @@
  */
 skiplist_t *check_next_list(skiplist_t *check, int value)
 {
-	
 	for (; check; check = check->next)
 	{
 		printf("Value checked at index[%lu] = [%d]\n",
@@ -22,6 +20,7 @@ skiplist_t *check_next_list(skiplist_t *check, int value)
 	}
 	return (NULL);
 }
+
 
 /**
  * linear_skip - searches for a value in a sorted skip list of integers
@@ -67,4 +66,3 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 	}
 	return (check_next_list(check, value));
 }
-
