@@ -54,13 +54,13 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 		if (check->express->n >= value)
 		{
 			last = check->express;
-			printf("Value checked at index[%lu] = [%d]\n", last->index, last->n);
+			printf("Value checked at index [%lu] = [%d]\n", last->index, last->n);
 			printf("Value found between indexes [%lu] and [%lu]\n",
 					check->index, last->index);
 			break;
 		}
 		check = check->express;
-		printf("Value checked at index[%lu] = [%d]\n", check->index, check->n);
+		printf("Value checked at index [%lu] = [%d]\n", check->index, check->n);
 	}
 	return (check_next_list(check, value));
 }
