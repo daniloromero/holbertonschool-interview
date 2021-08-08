@@ -13,7 +13,7 @@ skiplist_t *check_next_list(skiplist_t *check, int value)
 {
 	for (; check; check = check->next)
 	{
-		printf("Value checked at index[%lu] = [%d]\n",
+		printf("Value checked at index [%lu] = [%d]\n",
 				check->index, check->n);
 		if (check->n == value)
 			return (check);
