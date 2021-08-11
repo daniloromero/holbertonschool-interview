@@ -19,7 +19,7 @@ request(urlMovie, function (error, response, body) {
   }
 });
 
-function CharRequest (indexx, url, characters, limit) {
+function CharRequest (index, url, characters, limit) {
   if (index === limit) {
     return;
   }
