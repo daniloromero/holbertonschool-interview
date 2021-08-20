@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""Given a list of non-negative integers representing the heights of walls with
-unit width 1, as if viewing the cross-section of a relief map, calculate how
-many square units of water will be retained after it rains.
-"""
+"""calculate how many square units of water will be retained after it rains"""
 
 
 def rain(walls):
@@ -14,8 +11,8 @@ def rain(walls):
     """
     if type(walls) != list or len(walls) < 3:
         return 0
-    if len([*filter(lambda x: x < 0, walls)]) > 0:
-        return 0
+    # if len([*filter(lambda x: x < 0, walls)]) > 0:
+    #    return 0
     l_height = 0
     r_height = 0
     width = 0
