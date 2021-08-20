@@ -22,7 +22,7 @@ def rain(walls):
             l_height = walls[i]
         if l_height and walls[i] != 0:
             r_height = walls[i]
-        if walls[i] == 0:
+        if walls[i] == 0 and l_height:
             width += 1
         if walls[i] != 0 and r_height:
             water += min(l_height, r_height) * width
