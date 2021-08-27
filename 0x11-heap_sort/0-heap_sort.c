@@ -67,5 +67,5 @@ void sift_down(int *array, size_t size, int len, size_t size1)
                 }
                 k = j;
                 j = 2 * k + 1;
-        }
+	}
 }
