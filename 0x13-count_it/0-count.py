@@ -2,6 +2,7 @@
 """recursive function that queries the Reddit API"""
 import requests
 
+
 def count_words(subreddit, word_list, hot_list=[], after='null'):
     """ recursive function that queries the Reddit API to count word ocurrences
     Args:
