@@ -3,7 +3,7 @@
 import requests
 
 
-def count_words(subreddit, word_list, hot_list=[], after='null'):
+def count_words(subreddit, word_list, hot_list=[], after='null', done=0):
     """ recursive function that queries the Reddit API to count word ocurrences
     Args:
         subreddit: is a string with subreddit'name
@@ -21,5 +21,25 @@ def count_words(subreddit, word_list, hot_list=[], after='null'):
         hot_list += [post.get("data").get("title") for post in posts]
         after = hot.json().get("data").get("after")
         if after is not None:
-            count_words(subreddit, word_list, hot_list, after)
-    print(hot_list)
+            count_words(subreddit, word_list, hot_list, after, done=1)
+    if done == 0:
+        print_words(word_list, hot_list)
+
+
+def print_words(word_list, hot_list):
+    """ prints words wit word count respectively """
+    word_count = {}
+    for word in word_list:
+        c = 0
+        for title in hot_list:
+            t = title.lower().split()
+            if word.lower().strip() in t:
+                c += t.count(word.lower().strip())
+        if word.lower() in word_count:
+            word_count[word.lower()] += c
+        else:
+            word_count.update({word.lower(): c})
+
+    for k, v in sorted(word_count.items(), key=lambda x: (-x[1], x[0])):
+        if word_count.get(k) != 0:
+            print("{}: {}".format(k, v))
