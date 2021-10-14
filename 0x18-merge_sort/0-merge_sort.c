@@ -31,9 +31,9 @@ void topdown_merge(int *array, int i_start, int i_middle, int i_end, int *copy)
 	int i = i_start, j = i_middle;
 
 	printf("Merging...\n");
-	printf("[Left]: ");
+	printf("[left]: ");
 	print_array(&array[i_start], i_middle - i_start);
-	printf("[Right]: ");
+	printf("[right]: ");
 	print_array(&array[i_middle], i_end - i_middle);
 	for (k = i_start; k < i_end; k++)
 	{
