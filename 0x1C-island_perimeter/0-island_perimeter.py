@@ -36,7 +36,6 @@ def island_perimeter(grid):
                 count += 1
             if c != cols - 1 and grid[r][c] == 1 and grid[r][c + 1] == 0:
                 count += 1
-            print(count)
             if c == 100:
                 break
         if r == 100:
