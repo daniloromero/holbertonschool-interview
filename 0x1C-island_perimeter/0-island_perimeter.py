@@ -28,7 +28,7 @@ def island_perimeter(grid):
                 count += 1
             if c == cols - 1 and grid[r][c] == 1:
                 count += 1
-            if r != 0 and grid[r][c] == 1 and grid[r - 1] == 0:
+            if r != 0 and grid[r][c] == 1 and grid[r - 1][c] == 0:
                 count += 1
             if r != rows - 1 and grid[r][c] == 1 and grid[r + 1][c] == 0:
                 count += 1
