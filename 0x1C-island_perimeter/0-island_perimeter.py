@@ -13,21 +13,30 @@ def island_perimeter(grid):
             grid is rectangular, with its width and height not exceeding 100
     Return: integer indicating the erimeter of the island
     """
-    rows = len(grid)
-    cols = len(grid[0])
-
     count = 0
-    for r in range(0, rows):
-        for c in range(0, cols):
-            if grid[r][c] == 1:
-                if grid[r - 1][c] == 0:
-                    count += 1
-                if grid[r + 1][c] == 0:
-                    count += 1
-                if grid[r][c - 1] == 0:
-                    count += 1
-                if grid[r][c + 1] == 0:
-                    count += 1
+    if grid is None or len(grid) == 0 or len(grid[0]) == 0:
+        return count
+    cols = len(grid[0])
+    rows = len(grid)
+    for r in range(rows):
+        for c in range(cols):
+            if r == 0 and grid[r][c] == 1:
+                count += 1
+            if c == 0 and grid[r][c] == 1:
+                count += 1
+            if r == rows - 1 and grid[r][c] == 1:
+                count += 1
+            if c == cols - 1 and grid[r][c] == 1:
+                count += 1
+            if r != 0 and grid[r][c] == 1 and grid[r - 1] == 0:
+                count += 1
+            if r != rows - 1 and grid[r][c] == 1 and grid[r + 1][c] == 0:
+                count += 1
+            if c != 0 and grid[r][c] == 1 and grid[r][c - 1] == 0:
+                count += 1
+            if c != cols - 1 and grid[r][c] == 1 and grid[r][c + 1] == 0:
+                count += 1
+            print(count)
             if c == 100:
                 break
         if r == 100:
