@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Module that creates list of list representing a pascal traingle"""
 
 
