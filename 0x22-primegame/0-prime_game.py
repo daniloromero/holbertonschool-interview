@@ -52,8 +52,6 @@ def isWinner(x, nums):
             players["Maria"] += 1
         else:
             players["Ben"] += 1
-        print(k)
-        print(players)
     if players["Maria"] > players["Ben"]:
         return "Maria"
     elif players["Maria"] < players["Ben"]:
