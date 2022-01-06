@@ -35,20 +35,19 @@ def isWinner(x, nums):
     You can assume n and x will not be larger than 10000
     You cannot import any packages in this task
     """
-    n = [1]
     players = {"Maria": 0, "Ben": 0}
     prime_list = make_prime_list(max(nums))
 
     for i in range(x):
         n = nums[i]
-        round = 0
+        if n == 1:
+            players["Ben"] += 1
+            continue
+        count = 0
         for k in range(2, n + 1):
-            if k and is_prime(k):
-                if k % 2 == 0:
-                    round = 1
-                else:
-                    round = 2
-        if round == 1:
+            if prime_list[k]:
+                count += 1
+        if count % 2 != 0:
             players["Maria"] += 1
         else:
             players["Ben"] += 1
